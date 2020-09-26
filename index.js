@@ -12,12 +12,10 @@ async function start(client) {
     if (msg.body === "!cek") {
       client.sendText(msg.from, "👋 Hello! BOT AKTIF");
       client;
-    } 
-	else if (msg.body.startsWith("!url ")) {
+    } else if (msg.body.startsWith("!url ")) {
 	let url = msg.body.split(" ")[1];
 	await client.sendStickerfromUrl(msg.from, url);
-	}
-	else if (msg.mimetype) {
+	} else if (msg.mimetype) {
       if (msg.caption === "!stiker" && msg.type === "image") {
         const mediaData = await decryptMedia(msg);
         const imageBase64 = `data:${msg.mimetype};base64,${mediaData.toString(
