@@ -14,7 +14,7 @@ async function start(client) {
       client;
     } 
 	else if (msg.body.startsWith("!url ")) {
-	let url = msg.body.split(" ");
+	let url = msg.body.split(" ")[1];
 	await client.sendStickerfromUrl(msg.from, url);
 	}
 	else if (msg.mimetype) {
